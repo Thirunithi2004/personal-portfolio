@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+    *{
+        padding: 0%;
+        margin: 0%;
+    }
+    html, body {
+  height: 100%;
+  width: 100%;
+}
+    body{
+      background-color: #f4f4f4;
+      height: 100vh;
+      background-image: url('https://img.freepik.com/free-vector/abstract-background-banner-colorful_677411-3704.jpg?semt=ais_hybrid&w=740');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;          
+      /* color: white; */
+      /* font-family: Arial, sans-serif; */
+      text-align: center;
+     
+    }
+    #menu{
+        background-color: rgba(1, 47, 174, 0.977);
+        padding:1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1; 
+    }
+    nav{
+        display: flex;
+        justify-content: center;
+        /* flex-wrap: wrap; */
+        gap: 35px; 
+        /* column-gap: 60px;       */
+    }
+    nav a{
+        color:whitesmoke;
+        font-weight: bold;
+        text-decoration: none;
+        font-size:20px;
+        text-transform: uppercase;
+    }
+    nav a:hover{
+        color: rgb(6, 15, 15);
+        /* font-size:22px ; */
+        transition: 0.3s;
+    }
+    #home,#about,#education,#skills,#websites,#p_e,#contact{
+           
+            display: flex;
+            justify-content: center;
+            text-align: justify;
+
+    }
+    #home{
+        text-align: center;
+        margin-top: 100px;
+        
+    }
+   
+    .box{
+
+            /* border: 1px solid;
+            border: none; */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 1300px;              
+            background:lightskyblue
+                 
+    } 
+    .box:hover{
+        transform:  scale(1.01);
+    }
+    #profile-card{
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    
+    }
+    
+    #profile-card img{
+        width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 50px;
+            object-fit:cover;
+            border: 2px solid;
+            transition: 1s;
+            
+        
+            
+          }
+    #profile-card img:hover{
+        transform:  scale(1.1);
+    }
+    #profile-card div{
+        text-align: start;
+    }
+    .divider1 {
+      height: 1px;
+     margin-top: 20px;
+      background-color: #9a9494;
+      margin-bottom: 16px;
+    }
+    .divider2 {
+      width: 1px;
+      background-color:  #9a9494;
+      /* margin-bottom: 16px; */
+    }
+    .top-section{
+        display: flex;
+        gap: 50px;
+    }
+    .info-item{
+        font-weight: normal;
+        margin-bottom:7px ;
+    }
+    .top p{
+        margin-top: 5px;
+        color: rgb(91, 84, 84);
+    }
+
+    
+    /* .box img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 50px;
+            border: 2px solid;
+            transition: 2s ;
+    }  */
+    section + h2{
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    /* education box */
+    .education-box{
+        width: 300px;
+        height:100px;
+        background:lightskyblue;
+        border-radius: 10px;
+        box-shadow: 8px 2px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+    justify-content: center;
+    /* align-items: center;*/
+    text-align: center;
+    /* transition: 0.5s; */
+    }
+    #education .box{
+        display: flex;
+        justify-content: center;
+        /* overflow-x: auto; */
+        gap: 50px;
+          
+    }
+    .education-box:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .skills-card img{
+        margin-top: 5px;
+        border:none;
+        width: 220px;
+        height: 230px;
+        border-radius: 0%;
+                   
+    }
+
+    .skills-card{
+        border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(51, 4, 33, 0.2);
+            padding:10px; 
+            width: 230px;               
+            background-color: aliceblue;
+            text-align: center;
+            margin-bottom: 10px;
+            transition: 0.5s;
+            /* overflow-wrap: break-word; */
+            white-space: normal;
+            
+    }
+    #skills-container{
+        display: flex;
+        gap: 25px;
+        overflow-x: auto;
+      white-space: nowrap;      
+      padding: 20px;      
+      scrollbar-width: none;
+       
+    }
+    .skills-card:hover{
+        transform:  scale(1.04);
+    }
+    .skills-box::-webkit-scrollbar {
+    display: none;             
+    }
+   .skills-card button{    
+    margin-top: 10px;
+    width: 50px;
+   }
+
+   /* pe */
+   
+   .tabs{
+    display: flex;
+    gap: 50px;
+   }
+   .tab {
+    width: 180px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    font-size: large;
+    cursor: pointer;
+    background-color:aliceblue;
+}
+
+.tab.active {
+    background-color: rgb(25, 67, 251);
+    color: white;
+    font-weight: bold;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+    /* project section */
+    .item{
+        width: 1000px;
+        margin-top: 25px;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        /* background-color: white; */
+    }
+    .item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    /* contact section */
+    .contact-item{
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        width: fit-content;
+        padding: 10px;
+        margin: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background:linear-gradient(white,rgb(20, 20, 240));
+      
+    }
+    .contact-item img{
+        margin-top: 0%;
+        width: 40px;
+        height: 45px;
+        border-radius: 10px;
+        border: none;
+        transition:0.5s;
+    
+        
+    }
+    .contact-item a{
+        text-decoration: none;
+        padding:10px ;
+        margin-left: 5px;
+        font-size: large;
+        transition: o.5s;
+        
+    }
+    .contact-section{
+        display: flex;
+        justify-content: center;
+        animation: fadeInDown 2s ease-in-out;
+    }
+    .contact-item:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .contact-item a:hover{
+       color: rgb(7, 7, 72); 
+    }
+    .contact-item img:hover{
+        transform: rotate(20deg) scale(1.5);
+    }
+    #websites h3{   
+        text-align: center;
+        font-size:30px;         
+      }
+    /* Animations */
+    @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+    }
+/* 
+    @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 0; transform: translateY(0); }
+
+    } */
+
+    /* form section */
+    .form-container{
+        /* padding: 20px; */
+        border-radius: 30px;
+        width: 1300px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;      
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+      width: 500px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .display{
+        display: flex;
+        gap: 70px;
+        margin-top: 10px;
+        
+    }
+    .display label{
+        font-weight: normal;
+    }
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-top: 10px;
+      display: block;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      margin-bottom: 15px;    
+
+    }
+
+    #validatedForm .buttons {
+      margin-top:20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #validatedForm button {
+      padding: 10px 20px;
+      background-color: #6a5acd;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #validatedForm button:hover {
+      background-color: #483d8b;
+    }
+    </style>
+</head>
+<body>
+    <header id="menu">
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>         
+          <a href="#p_e">projects & experience</a>
+          <a href="#websites">websites</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+      <!-- home section -->
+      <section id="home">
+        <div class="box" id="profile-card" >  
+            <div class="profile-details">
+                <img src="my profile.jpg" alt="my photo">
+            </div> 
+            <div class="profile-details">
+                <div class="top">
+                    <h2>Thirunithi Kamaraj</h2>
+                    <h3>B.Tech/B.E.</h3>
+                    <p>Kings College of Engineering, Punalkullam</p>
+                </div>
+                <div class="divider1"></div>
+                <div  class="top-section">
+                    <div class="info-column">
+                        <div class="info-item">📍 Thanjavur</div>
+                        <div class="info-item">♀️ Female</div>
+                        <div class="info-item">🎂 22nd August 2004</div>
+                    </div>
+                    <div class="divider2"></div>
+                    <div class="info-column">
+                        <div class="info-item">📞 7868856478</div>
+                        <div class="info-item">✉️ thirunithikamaraj@gamil.com</div>
+                    </div>
+                </div>
+            </div> 
+            
+             
+        </div>  
+       </section>     
+       <!-- about section -->
+        <h2>about</h2>
+        <section id="about">
+            <div class="box">
+                <h3>Hello!</h3>
+                <p>I'm Thiurnithi Kamaraj, a final-year ECE student passionate about technology and innovation. I love working on software projects and IoT-based, constantly learning and evolving my skills.Passionate about learning
+                    and implementing innovative solutions, with experience in internships and independent projects. Actively enhancing programming skills through platforms like HackerRank and LeetCode to deliver high-quality solutions in the tech industry.</p>
+            </div>
+           
+       </section>
+       <!-- education section -->
+       <h2>EDUCATION</h2>
+      <section id="education">
+        <div class="box">
+            <div class="education-box">
+                <strong>B.E ECE</strong>
+                <p> Kings College Of Engineering (2021-2025), CGPA: 8.3</p>
+            </div>
+            <div class="education-box">
+                <strong>HSC</strong>
+                <p>Little Scholars Matriculation Higher Secondary School (2020-2021), 77%</p>
+            </div>
+            <div class="education-box">
+                <strong>SSLC</strong>
+                <p> Little Scholars Matriculation Higher Secondary School (2018-2019), 70%</p>
+            </div>
+        </div>
+      </section>
+      <!-- skills section -->
+      <h2>skills</h2>
+      <section id="skills">
+        <div class="box">
+            <div id="skills-container">
+                <div class="skills-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbXuuO8t9meLoNAhgCavnEUWmjQ3NwxUMdKQ&s" alt="c icon">
+                    <h3>C</h3>
+                    <p>Course duration: 3 months</p>
+                    <P>This is my programming skills</P>
+                    <button><a href="https://www.coursera.org/learn/c-for-everyone">click</a></button>
+                </div>
+                <div class="skills-card">
+                    <img src="https://res.cloudinary.com/hy4kyit2a/image/upload/sd_social300x300_1.png" alt="salesforce Icon">
+                    <h3>SALESFORCE</h3>   
+                    <p>This is my cloud platform skill.</p>   
+                    <p>Trailhead learner with CRM and cloud basics experience.</p>
+                    <button><a href="https://www.salesforce.com/in/">click</a></button>
+                </div>
+                <div class="skills-card">
+                    <img src="https://blog.eduonix.com/wp-content/uploads/2018/09/Scientific-Python-Scipy-696x500.jpg" alt="python Icon">
+                    <h3>python</h3>                                       
+                    <p>Skilled in building semantic and structured web pages.</p>
+                    <button><a href="https://www.coursera.org/learn/python-for-applied-data-science-ai">click</a></button>
+    </div>
+                
+                <div class="skills-card">
+                    <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191217202846/Programming-for-Beginners-10-Best-HTML-Coding-Practices-You-Must-Know.png" alt="Java Logo">
+                    <h3>HTML</h3>
+                    <p>Skilled in building semantic and structured web pages.</p>
+                    <button><a href="https://www.coursera.org/projects/showcase-build-a-portfolio-website-html-css-javascript">click</a></button>
+                </div>
+                <div class="skills-card">
+                    <img src="https://cronuts.digital/wp-content/uploads/2020/04/Artboard-11-1024x724.png" alt="CSS Icon">
+                    <h3>CSS</h3>
+                    <p>Styled user interfaces and responsive layouts with modern CSS3.</p>
+                    <button><a href="https://www.coursera.org/projects/showcase-build-a-portfolio-website-html-css-javascript">click</a></button>
+                </div>
+               
+                <div class="skills-card">
+                    <img src="data:image/png;base64,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" alt="JavaScript Icon" >
+                    <h3>JavaScript</h3>
+                    <p>Used for adding interactivity and dynamic behavior to websites.</p>
+                    <button><a href="https://www.coursera.org/professional-certificates/ibm-full-stack-javascript-developer">click</a></button>
+                </div>
+                <div class="skills-card">
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/0*A0U4cjO9-fe76c0i" alt="php Icon">
+                    <h3>php</h3>
+                    <p>PHP can connect to databases </p>
+                    <p>Great for backend development</p>
+                    <button><a href="https://www.coursera.org/learn/web-applications-php">click</a></button>
+                </div>
+                <div class="skills-card">
+                    <img src="https://cdn-icons-png.flaticon.com/128/190/190411.png" alt="Project Icon">
+                    <h3>Project Management</h3>
+                    <p>Hands-on Projects</p>
+                    <p>This is my leadership skill.</p>
+                    <button><a href="https://www.coursera.org/courses?query=project%20management">click</a></button>
+                </div>
+                <div class="skills-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUb5hojLvQ9uDLqUpwbFgIKY_KLPTJd78hS3dQtoy_ZKI6S310znjoLmWjuhYbiLk9-ys&usqp=CAU" alt="Electrical Icon">
+                    <h3>Electrical Design</h3>
+                    <p>ECE Core Subject</p>
+                    <p>This is my hardware skill.</p>
+                    <button><a href="https://www.udemy.com/course/crash-course-electronics-and-pcb-design/?srsltid=AfmBOori8NCdoVAqCFEm53lbAP_GnECfBJ4BPuTdSDj5wIQj02SfUaNM&couponCode=NVDINCTA35CTR">click</a></button>
+                </div>
+            </div>               
+        </div>
+      </section>
+      <!-- projects & experience section -->
+      <h2>projects & experience</h2>
+      <section id="p_e">
+        <div class="box">
+            <!-- tab section -->
+            <div class="tabs">
+                <div id="tab1" class="tab" onclick="showTab(1)">project</div>
+                <div id="tab2" class="tab" onclick="showTab(2)">Experiences</div>                
+            </div>
+            <!-- tab inside content section -->
+             <div id="content1" class="content active">
+                <div class="item">
+                    <h4>WEB DEVELOPMENT PROJECT</h4>
+                    <P>Completed a detailed internship project on web development, focusing on frontend technologies and responsive design.</P>
+                 </div>
+                 <div class="item">
+                    <h4>BNSL INTERNSHIP PROJECT</h4>
+                    <P>Contributed to telecom network optimization and analyzed key performance metrics.</P>
+                 </div>
+                 <div class="item">
+                    <h4>IOT BASED COTTON DUST MONITORING</h4>
+                    <P>An IoT-based system for real-time monitoring of cotton dust and environmental hazards to ensure worker safety in textile industries.</P>
+                 </div>
+                 <div class="item">
+                    <h4>SMART MENU RESTAURANT</h4>
+                    <P>A smart restaurant system that streamlines ordering and enhances customer experience through digital menu integration.</P>
+                 </div>
+             </div>
+             
+             <!-- experience -->
+             <div id="content2" class="content">
+                <div class="item">
+                    <dl>
+                        <dt><b>INTERNPE(ONLINE INTERNSHIP)</b></dt>
+                        <dd>
+                            <li>Gained hands-on experience in web development through real-world projects.</li>
+                            <li>Collaborated with cross-functional teams to deliver tasks on time.</li>
+                            <li>Strengthened programming and time management skills.</li>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="item">
+                    <dl>
+                        <dt><b>BSNL(INTERNSHIP)</b></dt>
+                        <dd>
+                            <li>Assisted in maintaining and upgrading electrical systems to improve efficiency.</li>
+                            <li>Worked closely with senior engineers to understand telecom infrastructure and networks.</li>
+                            <li>Documented and presented findings to enhance organizational processes.</li>
+                        </dd>
+                    </dl>
+                </div>
+               
+                <div class="item">
+                    <dl>
+                        <dt><b>LOGRITHA TECHNOLGY Pvt Ltd (TRAINING)</b></dt>
+                        <dd>
+                            <li>Developed responsive websites using HTML, CSS, JavaScript, and PHP with a focus on clean UI/UX.</li>
+                            <li>Implemented interactive features like form validation and section toggling using JavaScript.</li>
+                            <li>Gained hands-on experience in both front-end and back-end development during real-time projects.</li>
+                        </dd>
+                    </dl>
+                </div>                
+             </div>
+
+            
+        </div>
+      </section>
+      <!-- websites section -->
+      <h2>websites</h2>      
+      <section id="websites">      
+        <div class="box">
+            <h3>👇🏻 Connect with me 👇🏻</h3> 
+            <div class="contact-section">
+               
+                  <div class="contact-item">
+                    <img src="https://static.vecteezy.com/system/resources/previews/023/986/926/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" alt="LinkedIn">
+                    <a href="https://www.linkedin.com/in/thirunithi-kamaraj-728214280/">LinkedIn</a>
+                  </div>
+                  <div class="contact-item">
+                    <img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxrTIBuBZizatHdyqsYy9gTb9aW9fHPANgdtp5VXcDfDu_ojK88xUsjbPVPffzXiA.rOhFsYsqvtWttBQUL.yDGk-&format=source" alt="Naukri">
+                    <a href="https://www.naukri.com/mnjuser/profile?id=&altresid">Naukri</a>
+                  </div>
+                  <div class="contact-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/2560px-Salesforce.com_logo.svg.png" alt="Salesforce">
+                    <a href="https://www.salesforce.com/trailblazer/thirukam1">Salesforce</a>
+                  </div>
+                  <div class="contact-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode">
+                    <a href="https://leetcode.com/thirunithikamaraj" >LeetCode</a>
+                  </div>
+            </div>
+                       
+        </div>
+
+      </section>
+      <!-- contact -->
+      <h2>contact</h2>  
+      <section id="contact">
+        <div class="box">
+            <div class="form-container">
+                <form id="validatedForm" onsubmit="return validation()">
+                    <div class="form-group">
+                        <span id="nameError" class="error"></span>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        
+                        <label for="email">Email</label><span id="emailError" class="error"></span>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <span id="numberError" class="error"></span>
+                        <label for="number">Phone Number</label>
+                        <input type="text" id="number" name="number" placeholder="Enter your number">
+                    </div>
+                    <div class="radio-group">
+                        <span id="genderError" class="error"></span>
+                        <label>Gender:</label>
+                        <div class="display">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other</label>
+                    </div></div>
+                    <div class="radio-group">
+                        <span id="roleError" class="error"></span>
+                        <label>You are:</label>
+                        <div class="display">
+                        <label><input type="radio" name="role" value="Student"> Student</label>
+                        <label><input type="radio" name="role" value="Faculty"> Faculty</label>
+                        <label><input type="radio" name="role" value="Member"> Member</label>
+                    </div></div>
+                    <div class="radio-group">
+                    <span  id="modeError" class="error"></span>
+                        <label >Work Mode Preference:</label>
+                        <div class="display">
+                        <label><input type="radio" name="mode" value="Remote"> Remote</label>
+                        <label><input type="radio" name="mode" value="On-site"> On-site</label>
+                        <label><input type="radio" name="mode" value="Hybrid"> Hybrid</label>
+                    </div></div>
+                    <div class="checkbox-group">
+                        <span id="jobError" class="error"></span>
+                        <label>Job Preference:</label>
+                        <div class="display">
+                        <label><input type="checkbox" name="job" value="Developer"> Developer</label>
+                        <label><input type="checkbox" name="job" value="Tester"> Tester</label>
+                        <label><input type="checkbox" name="job" value="Analyst"> Analyst</label>
+                        <label><input type="checkbox" name="job" value="Designer"> Designer</label>
+                    </div></div>
+                    <div class="form-group">
+                        <span id="descError" class="error"></span>
+                        <label for="desc">Description</label>
+                        <textarea id="desc" placeholder="Enter description"></textarea>
+                    </div>
+                    <div class="buttons">
+                        <button type="reset" onclick="clearErrors()">Reset</button>
+                        <button type="submit">Submit</button>                        
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+      </section>
+
+      <script>
+      function showTab(tabIndex) {
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.content');
+
+    tabs.forEach(tab => tab.classList.remove('active'));
+    contents.forEach(content => content.classList.remove('active'));
+
+    document.getElementById(`tab${tabIndex}`).classList.add('active');
+    document.getElementById(`content${tabIndex}`).classList.add('active');
+  }
+
+  window.onload = function() {
+    showTab(1);
+  };
+//   validation for form
+function validation() {
+      // Get values
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let number = document.getElementById("number").value.trim();
+      let desc = document.getElementById("desc").value.trim();
+      let gender = document.querySelector('input[name="gender"]:checked');
+      let role = document.querySelector('input[name="role"]:checked');
+      let mode = document.querySelector('input[name="mode"]:checked');
+      let jobs = document.querySelectorAll('input[name="job"]:checked');
+
+      // Clear all errors
+      clearErrors();
+
+      let isValid = true;
+
+      // Name validation
+      if (name.length < 3) {
+        document.getElementById("nameError").textContent = "Please enter a valid name (min 3 characters)*";
+        isValid = false;
+      }
+
+      // Email validation
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById("emailError").textContent = "Please enter a valid email address*";
+        isValid = false;
+      }
+
+      // Phone number validation
+      if (!/^\d{10}$/.test(number)) {
+        document.getElementById("numberError").textContent = "Phone number must be  10 digits*";
+        isValid = false;
+      }
+
+      // Description
+      if (desc === "") {
+        document.getElementById("descError").textContent = "Please enter a description*";
+        isValid = false;
+      }
+
+      if (!gender) {
+        document.getElementById("genderError").textContent = "Please select your gender*";
+        isValid = false;
+      }
+
+      if (!role) {
+        document.getElementById("roleError").textContent = "Please select your role*";
+        isValid = false;
+      }
+
+      if (!mode) {
+        document.getElementById("modeError").textContent = "Please select your work mode*";
+        isValid = false;
+      }
+
+      if (jobs.length === 0) {
+        document.getElementById("jobError").textContent = "Please select at least one job preference*";
+        isValid = false;
+      }
+
+      return isValid;
+    }
+
+    function clearErrors() {
+      const errors = document.querySelectorAll(".error");
+      errors.forEach(error => error.textContent = "");
+    }
+      </script>
+</body>
+</html>
