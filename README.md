@@ -5,13 +5,6 @@ This project is designed and developed using **HTML**, **CSS**, and **JavaScript
 
 ---
 
-## 🌐 Live Website
-
-👉 [Click here to view my live portfolio]([https://your-live-portfolio-link.com](https://github.com/Thirunithi2004/personal-portfolio))  
-_(Replace this link with your actual hosting URL — like GitHub Pages, Netlify, or Vercel)_
-
----
-
 ## ✨ Features
 
 - 🔹 Fully responsive design (mobile-friendly)
